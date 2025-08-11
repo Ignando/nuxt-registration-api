@@ -12,4 +12,16 @@ database.prepare(`
   )
 `).run()
 
+database.prepare(`CREATE TABLE IF NOT EXSTS (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  date_time TEXT NOT NULL,
+  meter_number INTEGER NOT NULL,
+  token INTEGER NOT NULL UNIQUE,
+  utility_type TEXT NOT NULL,
+  complex TEXT NOT NULL,
+  value_of_purchase INTEGER NOT NULL,
+  owner_id, STRING NOT NULL,
+  )
+  `).run()
+
 export default database
